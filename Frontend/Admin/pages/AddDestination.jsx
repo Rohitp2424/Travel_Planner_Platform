@@ -14,6 +14,7 @@ function AddDestination() {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Handle Input Change
   const handleChange = (e) => {
     setDestination({
       ...destination,
@@ -21,6 +22,7 @@ function AddDestination() {
     });
   };
 
+  // Handle Image Upload
   const handleImage = (e) => {
     const file = e.target.files[0];
 
@@ -35,19 +37,22 @@ function AddDestination() {
     reader.readAsDataURL(file);
   };
 
+  // Save Destination
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setLoading(true);
 
     const newDestination = {
-      ...destination,
-      image,
+      name: destination.name,
+      country: destination.country,
+      price: destination.price,
+      image: image,
     };
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/destinations", // Change API if needed
+        "http://localhost:8080/api/destinations",
         {
           method: "POST",
           headers: {
@@ -66,7 +71,7 @@ function AddDestination() {
       navigate("/destinations");
     } catch (error) {
       console.error(error);
-      alert("Error while adding destination");
+      alert("Failed to add destination!");
     } finally {
       setLoading(false);
     }
@@ -97,8 +102,9 @@ function AddDestination() {
               name="name"
               value={destination.name}
               onChange={handleChange}
+              placeholder="Enter destination name"
               required
-              className="w-full mt-2 border rounded-xl p-3"
+              className="w-full mt-2 border rounded-xl p-3 outline-none focus:border-purple-600"
             />
           </div>
 
@@ -113,15 +119,16 @@ function AddDestination() {
               name="country"
               value={destination.country}
               onChange={handleChange}
+              placeholder="Enter country"
               required
-              className="w-full mt-2 border rounded-xl p-3"
+              className="w-full mt-2 border rounded-xl p-3 outline-none focus:border-purple-600"
             />
           </div>
 
           {/* Price */}
           <div>
             <label className="font-semibold">
-              Price
+              Price (₹)
             </label>
 
             <input
@@ -129,8 +136,9 @@ function AddDestination() {
               name="price"
               value={destination.price}
               onChange={handleChange}
+              placeholder="Enter price"
               required
-              className="w-full mt-2 border rounded-xl p-3"
+              className="w-full mt-2 border rounded-xl p-3 outline-none focus:border-purple-600"
             />
           </div>
 
@@ -153,14 +161,13 @@ function AddDestination() {
               <img
                 src={image}
                 alt="Preview"
-                className="mt-4 h-56 rounded-xl object-cover"
+                className="mt-4 w-72 h-52 object-cover rounded-xl shadow"
               />
             )}
 
           </div>
 
           {/* Buttons */}
-
           <div className="md:col-span-2 flex gap-4 mt-4">
 
             <button
