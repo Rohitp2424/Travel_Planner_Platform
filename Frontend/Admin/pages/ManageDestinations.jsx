@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaPlus,
   FaEdit,
@@ -8,6 +9,8 @@ import {
 } from "react-icons/fa";
 
 function ManageDestinations() {
+  const navigate = useNavigate();
+
   const [destinations, setDestinations] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -71,7 +74,10 @@ function ManageDestinations() {
           Manage Destinations
         </h1>
 
-        <button className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-xl flex items-center gap-2">
+        <button
+          onClick={() => navigate("/add-destination")}
+          className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-xl flex items-center gap-2"
+        >
           <FaPlus />
           Add Destination
         </button>
@@ -142,7 +148,10 @@ function ManageDestinations() {
 
                 <div className="flex justify-between mt-5">
 
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                  <button
+                    onClick={() => navigate(`/edit-destination/${item.id}`)}
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                  >
                     <FaEdit />
                     Edit
                   </button>
