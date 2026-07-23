@@ -1,0 +1,138 @@
+.plan-trip-page{
+    min-height:100vh;
+    background:#F7F5FF;
+    padding:40px;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Form */
+
+.trip-form{
+    max-width:850px;
+    margin:60px auto 0;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.trip-form h2{
+    text-align:center;
+    color:#222;
+    margin-bottom:30px;
+}
+
+/* Form Groups */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:22px;
+}
+
+.form-group label{
+    font-size:16px;
+    font-weight:600;
+    color:#333;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #D8D8D8;
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+    background:#fff;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#7C3AED;
+    box-shadow:0 0 0 3px rgba(124,58,237,.15);
+}
+
+/* Date Row */
+
+.date-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* Trip Types */
+
+.trip-types{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:8px;
+}
+
+.trip-types label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px;
+    border:1px solid #D8D8D8;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    background:#fff;
+}
+
+.trip-types label:hover{
+    border-color:#7C3AED;
+    background:#F4EFFF;
+}
+
+.trip-types input[type="radio"]{
+    accent-color:#7C3AED;
+}
+
+/* Next Button */
+
+.next-btn{
+    width:100%;
+    margin-top:30px;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#7C3AED;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.next-btn:hover{
+    background:#6527D4;
+    transform:translateY(-2px);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .plan-trip-page{
+        padding:20px;
+    }
+
+    .trip-form{
+        padding:25px;
+        margin-top:40px;
+    }
+
+    .date-row{
+        grid-template-columns:1fr;
+    }
+
+    .trip-types{
+        grid-template-columns:1fr;
+    }
+
+}

@@ -1,0 +1,101 @@
+.notification-page{
+    min-height:100vh;
+    background:#F7F5FF;
+    padding:40px;
+    font-family:'Poppins',sans-serif;
+}
+
+.notification-page h1{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    color:#222;
+    margin-bottom:35px;
+}
+
+.notification-container{
+    max-width:900px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.notification-card{
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.notification-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(124,58,237,.18);
+}
+
+.notification-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:24px;
+    flex-shrink:0;
+}
+
+.success{
+    background:#22C55E;
+}
+
+.flight{
+    background:#7C3AED;
+}
+
+.hotel{
+    background:#06B6D4;
+}
+
+.offer{
+    background:#F59E0B;
+}
+
+.notification-content{
+    flex:1;
+}
+
+.notification-content h3{
+    color:#222;
+    margin-bottom:8px;
+}
+
+.notification-content p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:10px;
+}
+
+.notification-content span{
+    color:#999;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+
+    .notification-page{
+        padding:20px;
+    }
+
+    .notification-card{
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+    }
+
+}

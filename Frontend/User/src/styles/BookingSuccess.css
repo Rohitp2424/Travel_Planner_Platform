@@ -1,0 +1,98 @@
+.success-page{
+    min-height:100vh;
+    background:#F7F5FF;
+    padding:40px;
+    font-family:'Poppins',sans-serif;
+}
+
+.success-card{
+    max-width:650px;
+    margin:60px auto 0;
+    background:#fff;
+    padding:45px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.success-icon{
+    font-size:90px;
+    color:#22C55E;
+    margin-bottom:25px;
+}
+
+.success-card h1{
+    color:#222;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.success-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:30px;
+    font-size:16px;
+}
+
+.booking-id{
+    background:#F3ECFF;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:30px;
+}
+
+.booking-id span{
+    display:block;
+    color:#666;
+    margin-bottom:8px;
+}
+
+.booking-id strong{
+    color:#7C3AED;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.dashboard-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#7C3AED;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dashboard-btn:hover{
+    background:#6527D4;
+    transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .success-page{
+        padding:20px;
+    }
+
+    .success-card{
+        margin-top:40px;
+        padding:30px 20px;
+    }
+
+    .success-card h1{
+        font-size:28px;
+    }
+
+    .success-icon{
+        font-size:70px;
+    }
+
+    .booking-id strong{
+        font-size:20px;
+    }
+
+}
